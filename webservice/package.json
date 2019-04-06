@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "axios": "^0.18.0",
+    "commander": "^2.20.0",
+    "express": "^4.16.4",
+    "iconv-lite": "^0.4.24",
+    "moment": "^2.24.0",
     "mssql": "^5.0.5"
   }
 }
