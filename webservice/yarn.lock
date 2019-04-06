@@ -107,7 +107,12 @@ bl@^2.0.1:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
-body-parser@1.18.3:
+body-parse@^0.1.0:
+  version "0.1.0"
+  resolved "http://registry.npm.taobao.org/body-parse/download/body-parse-0.1.0.tgz#cd1639d9ac0725be81db38e1ca4012476f7051a6"
+  integrity sha1-zRY52awHJb6B2zjhykASR29wUaY=
+
+body-parser@1.18.3, body-parser@^1.18.3:
   version "1.18.3"
   resolved "http://registry.npm.taobao.org/body-parser/download/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
   integrity sha1-WykhmP/dVTs6DyDe0FkrlWlVyLQ=
