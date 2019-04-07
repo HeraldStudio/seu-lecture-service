@@ -3,16 +3,40 @@ const bodyParser = require('body-parser')
 const db = require('./db').queryPool
 const sql = require('mssql')
 const moment = require('moment')
+const uuid = require('node-uuid')
+const svgCaptcha = require('svg-captcha');
+const secret = require('./secret.json')
 
 const app = express()
 const lectureMap = {}
+const captchaPool = {}
 app.use(bodyParser.json())
+
 
 // TODO: 和讲座信息匹配
 
-app.post('/', async (req, res) => {
+app.post('/query', async (req, res) => {
+    
+    let {cardnum, name, token, captcha, service, accessKey} = req.body
+
+    if(token){
+        if(!captchaPool[token]){
+            res.send({err:'验证码过期'})
+            return
+        }
+        if(captchaPool[token] && captchaPool[token].toUpperCase() !== captcha.toUpperCase()){
+            res.send({err:'验证码错误'})
+            return
+        }
+        captchaPool[token] = undefined
+    } else {
+        if(service && accessKey && secret.challenges[service] &&secret.challenges[service].accessKey === accessKey){
+        } else {
+            res.send({err:'授权不正确'})
+            return
+        }
+    }
     let conn = await db.connect()
-    let {cardnum, name} = req.body
     console.log (`[+] ${moment().format('YYYY-MM-DD HH:mm:ss')} 查询 ${cardnum} - ${name} `)
     let ps = new sql.PreparedStatement(conn)
     try{
@@ -74,6 +98,15 @@ app.post('/', async (req, res) => {
         ps.unprepare()
         conn.close()
     }
+});
+
+app.get('/captcha', async(req, res) => {
+    let captcha = svgCaptcha.create();
+    let token = uuid.v4()
+    captchaPool[token] = captcha.text;
+    console.log(captcha.text, token)
+    res.send({token, captcha:captcha.data});
+    //res.send(captcha.data)
 });
 
 // 启动脚本
