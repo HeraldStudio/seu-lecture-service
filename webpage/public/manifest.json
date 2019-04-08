@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "人文讲座记录查询",
+  "name": "东南大学文化素质教育中心人文讲座记录查询",
   "icons": [
     {
       "src": "favicon.png",

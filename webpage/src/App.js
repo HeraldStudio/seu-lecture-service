@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
 import 'antd-mobile/dist/antd-mobile.css'
-import { NavBar, InputItem ,List } from 'antd-mobile';
+import { NavBar, InputItem ,List, ActivityIndicator } from 'antd-mobile';
 import { WingBlank, WhiteSpace, Toast } from 'antd-mobile';
 import './App.css';
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cardnum: '', name: '', token: '', captcha: '', captchaSVG: '', result:[]
+      cardnum: '', name: '', token: '', captcha: '', captchaSVG: '', result:[], loading:false
     }
     
     //<div dangerouslySetInnerHTML={{__html: this.state.captchaSVG}} />
@@ -33,8 +33,10 @@ class App extends Component {
   }
 
   async handleClick(){
+    this.setState({loading:true})
     let res = (await axios.post('/api/query', {cardnum:this.state.cardnum, name:this.state.name, token:this.state.token, captcha:this.state.captcha})).data
     this.refreshCaptcha()
+    this.setState({loading:false})
     if(res.err){
       Toast.fail(res.err)
       return
@@ -100,12 +102,13 @@ class App extends Component {
           >验证码</InputItem>
           
           <List.Item>
+            {this.state.loading ? <ActivityIndicator></ActivityIndicator> :
             <div
               style={{ width: '100%', color: '#13ACD9', textAlign: 'center' }}
               onClick={this.handleClick}
             >
               点击查询
-            </div>
+            </div>}
           </List.Item>
         </List>
         <WhiteSpace></WhiteSpace>
