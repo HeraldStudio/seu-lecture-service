@@ -18,6 +18,7 @@ app.use(bodyParser.json())
 app.post('/query', async (req, res) => {
     
     let {cardnum, name, token, captcha, service, accessKey} = req.body
+    let origin = 'lecture.myseu.cn - 网页查询'
 
     if(token){
         if(!captchaPool[token]){
@@ -31,13 +32,14 @@ app.post('/query', async (req, res) => {
         captchaPool[token] = undefined
     } else {
         if(service && accessKey && secret.challenges[service] &&secret.challenges[service].accessKey === accessKey){
+            origin = `通过 - ${service} - 查询`
         } else {
             res.send({err:'授权不正确'})
             return
         }
     }
     let conn = await db.connect()
-    console.log (`[+] ${moment().format('YYYY-MM-DD HH:mm:ss')} 查询 ${cardnum} - ${name} `)
+    console.log (`[+] ${moment().format('YYYY-MM-DD HH:mm:ss')} ${origin} ${cardnum} - ${name} `)
     let ps = new sql.PreparedStatement(conn)
     try{
         ps.input('cardnum', sql.VarChar(9))
@@ -104,9 +106,7 @@ app.get('/captcha', async(req, res) => {
     let captcha = svgCaptcha.create();
     let token = uuid.v4()
     captchaPool[token] = captcha.text;
-    console.log(captcha.text, token)
     res.send({token, captcha:captcha.data});
-    //res.send(captcha.data)
 });
 
 // 启动脚本
