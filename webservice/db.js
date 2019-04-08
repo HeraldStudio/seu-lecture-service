@@ -17,5 +17,12 @@ let importPool = new sql.ConnectionPool({
     database:'LECTURE'
 });
 
+queryPool.on('error', err => {
+    console.log(err)
+})
+
+importPool.on('error', err => {
+    console.log(err)
+})
 
 module.exports = {queryPool, importPool}
