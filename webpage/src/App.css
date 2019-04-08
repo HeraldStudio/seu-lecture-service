@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.am-input-extra{
+  max-height: 64px !important;
+}
+
+.am-navbar-light .am-navbar-title{
+  font-weight: bolder;
+  color: #333;
+}
+
+.copyright{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright div{
+  color:#888;
+}
