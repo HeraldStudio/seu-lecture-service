@@ -12,6 +12,7 @@ const lectureMap = {}
 const captchaPool = {}
 app.use(bodyParser.json())
 
+let conn
 
 // TODO: 和讲座信息匹配
 
@@ -38,7 +39,6 @@ app.post('/query', async (req, res) => {
             return
         }
     }
-    let conn = await db.connect()
     console.log (`[+] ${moment().format('YYYY-MM-DD HH:mm:ss')} ${origin} ${cardnum} - ${name} `)
     let ps = new sql.PreparedStatement(conn)
     try{
@@ -98,7 +98,6 @@ app.post('/query', async (req, res) => {
         console.log(e)
     } finally {
         ps.unprepare()
-        conn.close()
     }
 });
 
@@ -113,12 +112,11 @@ app.get('/captcha', async(req, res) => {
 (async() => {
     console.log('[+]小猴偷米人文讲座查询API启动中...')
     console.log('[+]正在加载讲座记录...')
-    let conn = await db.connect()
+    conn = await db.connect()
     let ps = new sql.PreparedStatement(conn)
     await ps.prepare("SELECT * FROM LectureHistory")
     let result = (await ps.execute()).recordset
     ps.unprepare()
-    conn.close()
     console.log(`[+]共加载 ${result.length} 条讲座记录`)
     result.forEach( k => {
         if(!lectureMap[k.dateStr]){
