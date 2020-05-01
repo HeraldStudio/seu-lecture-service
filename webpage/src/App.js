@@ -30,7 +30,11 @@ class App extends Component {
   }
 
   refreshCaptcha(){
+<<<<<<< HEAD
     axios.get(baseUrl + '/captcha').then(res => {
+=======
+    axios.get('https://tommy.seu.edu.cn/lecture/api/captcha').then(res => {
+>>>>>>> 798a038809efb1531baa8314f014f775b2c88b0e
       this.setState({ token: res.data.token, captchaSVG: res.data.captcha })
     })
   }

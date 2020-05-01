@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const db = require('./db').queryPool
 const sql = require('mssql')
 const moment = require('moment')
-const uuid = require('node-uuid')
+const uuid = require('uuid')
 const svgCaptcha = require('svg-captcha');
 const secret = require('./secret.json')
 
@@ -112,7 +112,9 @@ app.get('/captcha', async(req, res) => {
 (async() => {
     console.log('[+]小猴偷米人文讲座查询API启动中...')
     console.log('[+]正在加载讲座记录...')
+    
     conn = await db.connect()
+   
     let ps = new sql.PreparedStatement(conn)
     await ps.prepare("SELECT * FROM LectureHistory")
     let result = (await ps.execute()).recordset
