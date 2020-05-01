@@ -14,10 +14,10 @@ if (isIPhone) {
 }
 
 class App extends Component {
+
   constructor(props) {
     super(props)
 
-    const baseUrl = "xxxxxxxxx"   // 结尾没有/
 
     this.state = {
       cardnum: '', name: '', token: '', captcha: '', captchaSVG: '', result:[], loading:false
@@ -30,14 +30,14 @@ class App extends Component {
   }
 
   refreshCaptcha(){
-    axios.get(baseUrl + '/captcha').then(res => {
+    axios.get('https://tommy.seu.edu.cn/lecturesrv/captcha').then(res => {
       this.setState({ token: res.data.token, captchaSVG: res.data.captcha })
     })
   }
 
   async handleClick(){
     this.setState({loading:true})
-    let res = (await axios.post(baseUrl + '/query', {cardnum:this.state.cardnum, name:this.state.name, token:this.state.token, captcha:this.state.captcha})).data
+    let res = (await axios.post( 'https://tommy.seu.edu.cn/lecturesrv/query', {cardnum:this.state.cardnum, name:this.state.name, token:this.state.token, captcha:this.state.captcha})).data
     this.refreshCaptcha()
     this.setState({loading:false})
     if(res.err){
