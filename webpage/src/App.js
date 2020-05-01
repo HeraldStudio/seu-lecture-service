@@ -16,6 +16,9 @@ if (isIPhone) {
 class App extends Component {
   constructor(props) {
     super(props)
+
+    const baseUrl = "xxxxxxxxx"   // 结尾没有/
+
     this.state = {
       cardnum: '', name: '', token: '', captcha: '', captchaSVG: '', result:[], loading:false
     }
@@ -27,14 +30,14 @@ class App extends Component {
   }
 
   refreshCaptcha(){
-    axios.get('https://lecture.myseu.cn/api/captcha').then(res => {
+    axios.get(baseUrl + '/captcha').then(res => {
       this.setState({ token: res.data.token, captchaSVG: res.data.captcha })
     })
   }
 
   async handleClick(){
     this.setState({loading:true})
-    let res = (await axios.post('/api/query', {cardnum:this.state.cardnum, name:this.state.name, token:this.state.token, captcha:this.state.captcha})).data
+    let res = (await axios.post(baseUrl + '/query', {cardnum:this.state.cardnum, name:this.state.name, token:this.state.token, captcha:this.state.captcha})).data
     this.refreshCaptcha()
     this.setState({loading:false})
     if(res.err){
@@ -116,7 +119,7 @@ class App extends Component {
         <WhiteSpace></WhiteSpace>
         <div class="copyright">
           <div>东南大学文化素质教育中心保留对查询结果的解释权</div>
-          <div>小猴偷米工作室 • 东南大学文化素质教育中心</div>
+          <div>东南大学信使计划工作室 • 东南大学文化素质教育中心</div>
           <div>版权所有 © 2001-2009</div>
         </div>
         <WhiteSpace></WhiteSpace>
