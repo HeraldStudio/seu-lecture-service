@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   refreshCaptcha(){
-    axios.get('https://lecture.myseu.cn/api/captcha').then(res => {
+    axios.get('https://tommy.seu.edu.cn/lecture/api/captcha').then(res => {
       this.setState({ token: res.data.token, captchaSVG: res.data.captcha })
     })
   }
