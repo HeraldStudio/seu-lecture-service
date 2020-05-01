@@ -120,7 +120,7 @@ class App extends Component {
         <div class="copyright">
           <div>东南大学文化素质教育中心保留对查询结果的解释权</div>
           <div>东南大学信使计划工作室 • 东南大学文化素质教育中心</div>
-          <div>版权所有 © 2001-2009</div>
+          <div>版权所有 © 2001-2020</div>
         </div>
         <WhiteSpace></WhiteSpace>
         </WingBlank>
