@@ -719,9 +719,9 @@ jws@3.x.x:
     safe-buffer "^5.0.1"
 
 lodash@^4.15.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -775,10 +775,10 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-mssql@^5.0.5:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/mssql/-/mssql-5.1.1.tgz#e2ddb859fd3c4a086e7b7ef953a8d7d5467a5486"
-  integrity sha512-1UcknF7D4YfnrfMzR+FYUUswEREB110z1nD0Ncydt+6PT9Joj2w4xAJCQ1fSeKIeM4NrlZjQOaCTw5qU1zmZQA==
+mssql@^5.1.1:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/mssql/-/mssql-5.1.4.tgz#70378857651b77ce58320923a705a33ccffd555d"
+  integrity sha512-gyVAblm18RexdesxQubaLawjOyT8tPtBHuD2bdpoMYtythoJ8/Xs+DPYbdkNWOb2oU0uZrC87TdKVZhDWLwwlw==
   dependencies:
     debug "^3.2.6"
     generic-pool "^3.7.1"
