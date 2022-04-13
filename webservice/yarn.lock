@@ -78,9 +78,9 @@ assert-plus@1.0.0, assert-plus@^1.0.0:
   integrity sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
 
 async@>=0.6.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
-  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.3.tgz#ac53dafd3f4720ee9e8a160628f18ea91df196c9"
+  integrity sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -320,10 +320,10 @@ debug@=3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@^3.2.6:
-  version "3.2.6"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
-  integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
+debug@^3.2.7:
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.7.tgz#72580b7e9145fb39b6676f9c5e5fb100b934179a"
+  integrity sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==
   dependencies:
     ms "^2.1.1"
 
@@ -556,10 +556,10 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-generic-pool@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.7.1.tgz#36fe5bb83e7e0e032e5d32cd05dc00f5ff119aa8"
-  integrity sha512-ug6DAZoNgWm6q5KhPFA+hzXfBLFQu5sTXxPpv44DmE0A2g+CiHoq9LTVdkXpZMkYVMoGw83F6W+WT0h0MFMK/w==
+generic-pool@^3.7.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.8.2.tgz#aab4f280adb522fdfbdc5e5b64d718d3683f04e9"
+  integrity sha512-nGToKy6p3PAbYQ7p1UlWl6vSPwfwU6TMSWK7TTu+WUY4ZjyZQGniGGt2oNVvyNSpyZYSB43zMXVLcBm08MTMkg==
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -775,13 +775,13 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-mssql@^5.0.5:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/mssql/-/mssql-5.1.1.tgz#e2ddb859fd3c4a086e7b7ef953a8d7d5467a5486"
-  integrity sha512-1UcknF7D4YfnrfMzR+FYUUswEREB110z1nD0Ncydt+6PT9Joj2w4xAJCQ1fSeKIeM4NrlZjQOaCTw5qU1zmZQA==
+mssql@^5.1.1:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/mssql/-/mssql-5.1.5.tgz#19c587bf14ba7cb00bd487a1232f21f4ed364f69"
+  integrity sha512-/OdMuZL4PUFwoPd+bnfmxeTwmDZVvHt05LSMOLkMUX8hD1sX092Ag3gTgKmiQwB3K6EkmTxxh4Mgo/M4dqxP6Q==
   dependencies:
-    debug "^3.2.6"
-    generic-pool "^3.7.1"
+    debug "^3.2.7"
+    generic-pool "^3.7.2"
     tedious "^4.2.0"
 
 native-duplexpair@^1.0.0:
