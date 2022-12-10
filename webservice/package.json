@@ -6,7 +6,7 @@
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
     "commander": "^2.20.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "iconv-lite": "^0.4.24",
     "moment": "^2.24.0",
     "mssql": "^5.1.1",
